@@ -4,7 +4,10 @@ public class Main {
     public static void main(String[] args) {
 
         numberGuessGame Game = new numberGuessGame();
-
+        System.out.println("********************");
+        System.out.println("     Welcome to     ");
+        System.out.println("Number Guessing Game");
+        System.out.println("********************");
         Game.startGame();
     }
 }
