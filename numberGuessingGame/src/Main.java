@@ -1,13 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Game game = new Game();
+        boolean toPlay = true;
 
-        numberGuessGame Game = new numberGuessGame();
-        System.out.println("********************");
-        System.out.println("     Welcome to     ");
-        System.out.println("Number Guessing Game");
-        System.out.println("********************");
-        Game.startGame();
+        game.playerInit();
+        while (toPlay) {
+            game.Launch();
+            System.out.print("\nDo you want to play again (y or n)? ");
+            String ans = scanner.nextLine();
+
+            if (ans.equals("y")){
+                toPlay = true;
+            }
+            else {
+                toPlay = false;
+            }
+        }
+        System.out.println("Thank you!");
     }
 }
