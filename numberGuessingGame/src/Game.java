@@ -10,7 +10,7 @@ public class Game {
     Player player = new Player();
 
     public void playerInit(){
-        System.out.print("What is your name: ");
+        System.out.print("Есімің кім: ");
         player.setName(scanner.nextLine());
     }
 
@@ -18,31 +18,31 @@ public class Game {
         int secretNum = random.nextInt(101);
         player.setScore(0);
 
-        System.out.println("I am thinking number between 0 and 100");
-        System.out.print("Can you guess the number: ");
+        System.out.println("Мен 0 мен 100 арасындағы бір санды жасырдым!");
+        System.out.printf("Мен жасырған санды таба аласың ба, %s: ", player.getName());
         int playerGuess = scanner.nextInt();
         scanner.nextLine();
         player.setScore(player.getScore()+1);
         if (playerGuess == secretNum) {
-            System.out.printf("\nYou got it. I guessed the number %d\n", secretNum);
-            System.out.printf("It took %d attempts to you!", player.getScore());
+            System.out.printf("\nЖәрәйсің, %s! Мен жасырған сан %d\n", player.getName(), secretNum);
+            System.out.printf("Саған бар болғаны %d мүмкіндік керек болды", player.getScore());
         }
         else {
             while (playerGuess != secretNum){
                 if (playerGuess > secretNum) {
-                    System.out.print("I am thinking of smaller number: ");
+                    System.out.print("Мен кішірек сан ойлап тұрмын: ");
                     playerGuess = scanner.nextInt();
                     scanner.nextLine();
                     player.setScore(player.getScore()+1);
                 }else {
-                    System.out.print("I am thinking of bigger number: ");
+                    System.out.print("Мен үлкенірек сан ойлап тұрмын: ");
                     playerGuess = scanner.nextInt();
                     scanner.nextLine();
                     player.setScore(player.getScore()+1);
                 }
             }
-            System.out.printf("\nYou got it. I guessed the number %d\n", secretNum);
-            System.out.printf("It took %d attempts to you!", player.getScore());
+            System.out.printf("\nЖәрәйсің, %s! Мен жасырған сан %d\n", player.getName(), secretNum);
+            System.out.printf("Саған бар болғаны %d мүмкіндік керек болды", player.getScore());
         }
         }
 }
